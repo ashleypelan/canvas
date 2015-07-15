@@ -1,5 +1,61 @@
+// function getHSL(lightness) {
+//   var hue = 160;
+//   var saturation = "100%";
+//
+//   var string = "hsl("+ hue + ", " + saturation + ", " + lightness + "%)";
+//   return string;
+// }
+//
+// function getRandomInt(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+//
+// function shuffle(array) {
+//   var currentIndex = array.length, temporaryValue, randomIndex ;
+//   while (0 !== currentIndex) {
+//     randomIndex = Math.floor(Math.random() * currentIndex);
+//     currentIndex -= 1;
+//     temporaryValue = array[currentIndex];
+//     array[currentIndex] = array[randomIndex];
+//     array[randomIndex] = temporaryValue;
+//   }
+//
+//   return array;
+// }
+//
+// var lightness = getRandomInt(8, 50);
+// var lightnessArray = [lightness, lightness + 8, lightness + 16, lightness + 24,
+//                       lightness + 32, lightness + 40];
+//
+// shuffle(lightnessArray);
+
 var canvas = document.getElementById("canvasBoard");
+  canvas.addEventListener("onClick", function() {
+});
+
+var colour = document.querySelector("#colour").value;
+  colour.addEventListener("click", function() {
+  alert("pick a colour");
+});
+
 var context = canvas.getContext('2d');
+
+var createSquare = document.getElementById("square");
+createSquare.addEventListener("click", function() {
+  context.beginPath();
+  context.rect(50, 50, 30, 30);
+  context.fillStyle = colour;
+  context.fill();
+});
+
+
+var createCircle = document.getElementById("circle");
+createCircle.addEventListener("click", function() {
+  context.beginPath();
+  context.arc(200, 200, 30, 0, Math.PI*2);
+  context.fillStyle = colour;
+  context.fill();
+});
 
 
 
@@ -43,7 +99,6 @@ var context = canvas.getContext('2d');
 // };
 //
 // loop();
-
 
 // function draw_b() {
 //   var b_canvas = document.getElementById("b");
